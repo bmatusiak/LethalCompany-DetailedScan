@@ -17,7 +17,7 @@ namespace DetailedScan
     {
         private const string modGUID = "fivetoofive.DetailedScan";
         private const string modName = "DetailedScan";
-        private const string modVersion = "1.0.0.0";
+        private const string modVersion = "1.1.1.0";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
@@ -33,13 +33,11 @@ namespace DetailedScan
 
         private void TerminalIsAwake(object sender, TerminalEventArgs e)
         {            
-            BepInEx.Logging.Logger.CreateLogSource(modGUID).LogInfo("Terminal is started");
             AddCommand("detailed", "Ship is not Landed!\n\n", "kcehc", true);
         }
 
         private void OnBeginUsing(object sender, TerminalEventArgs e)
         {
-            BepInEx.Logging.Logger.CreateLogSource(modGUID).LogInfo("Terminel Used!");
             System.Collections.Generic.List<GrabbableObject> sortedItems = new System.Collections.Generic.List<GrabbableObject>();
             GrabbableObject[] unSortedItems = UnityEngine.Object.FindObjectsOfType<GrabbableObject>();
             int totalValue = 0;
@@ -57,9 +55,5 @@ namespace DetailedScan
 
             UpdateKeywordCompatibleNoun("kcehc", "detailed", CreateTerminalNode($"{finStr}", true));
         }
-
-
-
-
     }
 }

@@ -2,8 +2,8 @@
     "name": "DetailedScan",
     "description": "A terminal command for a detailed scan of the scrap still remaining outside the ship.",
 	"website_url": "https://github.com/fivetoofive/LethalCompany-DetailedScan",
-    "version_number": "1.1.0",
+    "version_number": "1.1.1",
     "dependencies": ["BepInEx-BepInExPack-5.4.2100",
-					"NotAtomicBomb-TerminalApi-1.2.0"
+					"NotAtomicBomb-TerminalApi-1.3.2"
 	]
 }
