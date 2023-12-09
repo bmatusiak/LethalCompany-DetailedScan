@@ -17,7 +17,7 @@ namespace DetailedScan
     {
         private const string modGUID = "fivetoofive.DetailedScan";
         private const string modName = "DetailedScan";
-        private const string modVersion = "1.1.1.0";
+        private const string modVersion = "1.1.2.0";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
@@ -33,7 +33,8 @@ namespace DetailedScan
 
         private void TerminalIsAwake(object sender, TerminalEventArgs e)
         {            
-            AddCommand("detailed", "Ship is not Landed!\n\n", "kcehc", true);
+            AddCommand("detailed", "Ship is not Landed!\n\n", "ftf0", true);
+            AddCommand("ds", "Ship is not Landed!\n\n", "ftf1", true);
         }
 
         private void OnBeginUsing(object sender, TerminalEventArgs e)
@@ -53,7 +54,9 @@ namespace DetailedScan
             string itemStr = string.Join("\n", sortedItems.Select(x => x.itemProperties.itemName + " : " + x.scrapValue.ToString() + " Value"));
             string finStr = "Scrap not in ship: " + sortedItems.Count().ToString() + "\n\n" + itemStr + "\n\nWith a total value of: " + totalValue.ToString()+"\n\n";
 
-            UpdateKeywordCompatibleNoun("kcehc", "detailed", CreateTerminalNode($"{finStr}", true));
+            TerminalNode newNode = CreateTerminalNode($"{finStr}", true);
+            UpdateKeywordCompatibleNoun("ftf0", "detailed", newNode);
+            UpdateKeywordCompatibleNoun("ftf1", "ds", newNode);
         }
     }
 }

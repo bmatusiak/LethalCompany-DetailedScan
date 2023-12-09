@@ -1,3 +1,9 @@
+### 1.1.2
+
+- Tested for version 45
+- Updated README
+- added `ds` as a new quicker command.
+
 ### 1.1.1
 
 - Removed pointless logging of events.
