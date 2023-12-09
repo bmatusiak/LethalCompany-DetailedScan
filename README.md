@@ -1,6 +1,6 @@
 # DetailedScan
-Type `detailed` in the terminal when landed at a moon to bring up a list of all of the scrap still remaining outside of the ship, and their individual value.
-`det` also work due to the nature of how the terminal works.
+Type `detailed` in the terminal when landed at a moon to bring up a list of all of the scrap still remaining outside of the ship, and their individual value.\n
+`det` also work due to the nature of how the terminal works.\n
 `ds` can now also be used.
 
 If you are not the host, item values in the detailed scan may appear as all '0' until the ship lands. 
