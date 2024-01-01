@@ -1,3 +1,7 @@
+### 1.1.3
+
+- updated to TerminalAPI 1.4.0
+
 ### 1.1.2
 
 - Tested for version 45
