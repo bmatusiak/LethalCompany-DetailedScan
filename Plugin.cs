@@ -17,7 +17,7 @@ namespace DetailedScan
     {
         private const string modGUID = "fivetoofive.DetailedScan";
         private const string modName = "DetailedScan";
-        private const string modVersion = "1.1.2.0";
+        private const string modVersion = "1.1.3";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
