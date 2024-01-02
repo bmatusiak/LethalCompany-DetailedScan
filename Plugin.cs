@@ -18,7 +18,7 @@ namespace DetailedScan
     {
         private const string modGUID = "fivetoofive.DetailedScan";
         private const string modName = "DetailedScan";
-        private const string modVersion = "1.2.0";
+        private const string modVersion = "1.2.1";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
@@ -59,7 +59,6 @@ namespace DetailedScan
         private void TerminalIsAwake(object sender, TerminalEventArgs e)
         {
             AddCommand("detailed", info, "ftf1", true);
-            //Note: The dummy verb word 'ftf1' is still required, if we want the shortform commands like 'det' to work.
 
             AddCommand("ds", info2, null, true);
         }
