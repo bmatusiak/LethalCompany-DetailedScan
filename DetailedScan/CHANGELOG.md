@@ -1,8 +1,12 @@
+### 1.2.1
+
+- Fixed a bug that caused the list to appear empty even when on a moon.
+
 ### 1.2.0
 
 - Updated to TerminalAPI 1.5.0
 - Changed how the code updates the terminal to be more inline with the new version of TerminalAPI.
-- You can now view the commands as options listed under the "Other" category in the terminal.
+- You can now view the commands as options listed under the `Other` category in the terminal.
 
 ### 1.1.3
 
