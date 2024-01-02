@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using TerminalApi;
 using static TerminalApi.Events.Events;
 using static TerminalApi.TerminalApi;
+using TerminalApi.Classes;
 
 namespace DetailedScan
 {
@@ -17,7 +18,7 @@ namespace DetailedScan
     {
         private const string modGUID = "fivetoofive.DetailedScan";
         private const string modName = "DetailedScan";
-        private const string modVersion = "1.1.3";
+        private const string modVersion = "1.2.0";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
@@ -31,10 +32,36 @@ namespace DetailedScan
             TerminalAwake += TerminalIsAwake;
         }
 
+        CommandInfo info = new CommandInfo()
+        {
+            DisplayTextSupplier = () =>
+            {
+                return "Ship is not Landed!\n\n";
+            },
+            Category = "Other",
+            Description = "Shows a detailed list of all the scrap still remaining outside the ship."
+
+        };
+
+        CommandInfo info2 = new CommandInfo()
+        {
+            DisplayTextSupplier = () =>
+            {
+                return "Ship is not Landed!\n\n";
+            },
+            Category = "Other",
+            Description = "A shortform version of the command 'detailed'."
+
+        };
+
+
+
         private void TerminalIsAwake(object sender, TerminalEventArgs e)
-        {            
-            AddCommand("detailed", "Ship is not Landed!\n\n", "ftf0", true);
-            AddCommand("ds", "Ship is not Landed!\n\n", "ftf1", true);
+        {
+            AddCommand("detailed", info, "ftf1", true);
+            //Note: The dummy verb word 'ftf1' is still required, if we want the shortform commands like 'det' to work.
+
+            AddCommand("ds", info2, null, true);
         }
 
         private void OnBeginUsing(object sender, TerminalEventArgs e)
@@ -54,9 +81,17 @@ namespace DetailedScan
             string itemStr = string.Join("\n", sortedItems.Select(x => x.itemProperties.itemName + " : " + x.scrapValue.ToString() + " Value"));
             string finStr = "Scrap not in ship: " + sortedItems.Count().ToString() + "\n\n" + itemStr + "\n\nWith a total value of: " + totalValue.ToString()+"\n\n";
 
-            TerminalNode newNode = CreateTerminalNode($"{finStr}", true);
-            UpdateKeywordCompatibleNoun("ftf0", "detailed", newNode);
-            UpdateKeywordCompatibleNoun("ftf1", "ds", newNode);
+            info.DisplayTextSupplier = () =>
+            {
+                return finStr;
+            };
+
+            info2.DisplayTextSupplier = () =>
+            {
+                return finStr;
+            };
+
+
         }
     }
 }

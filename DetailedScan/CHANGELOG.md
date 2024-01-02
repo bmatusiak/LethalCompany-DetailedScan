@@ -1,3 +1,9 @@
+### 1.2.0
+
+- Updated to TerminalAPI 1.5.0
+- Changed how the code updates the terminal to be more inline with the new version of TerminalAPI.
+- You can now view the commands as options listed under the "Other" category in the terminal.
+
 ### 1.1.3
 
 - updated to TerminalAPI 1.4.0
