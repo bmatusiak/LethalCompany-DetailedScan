@@ -3,6 +3,8 @@ Type `detailed` in the terminal when landed at a moon to bring up a list of all 
 - `det` also works due to the nature of how the terminal works.
 - `ds` can now also be used.
 
+You can view the commands in the "other" section of the terminal in-game incase you forget.
+
 If you are not the host, item values in the detailed scan may appear as all '0' until the ship lands. 
 If this happens, just back out of the terminal and re-enter the command.
 
