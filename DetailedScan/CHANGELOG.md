@@ -1,3 +1,7 @@
+### 1.2.2
+
+- Fixed a bug were leaving a match and joining another (or the same) match without quiting the game breaks the mod.
+
 ### 1.2.1
 
 - Fixed a bug that caused the list to appear empty even when on a moon.

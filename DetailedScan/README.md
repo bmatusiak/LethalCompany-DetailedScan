@@ -5,7 +5,7 @@ Type `detailed` in the terminal when landed at a moon to bring up a list of all 
 
 You can view the commands in the `other` section of the terminal in-game if you forget them.
 
-If you are not the host, item values in the detailed scan may appear as all "0" until the ship lands. 
+If you are not the host, item values in the detailed scan may appear as all '0' until the ship lands. 
 If this happens, just back out of the terminal and re-enter the command.
 
 ## Installation

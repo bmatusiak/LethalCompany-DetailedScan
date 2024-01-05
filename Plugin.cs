@@ -18,9 +18,11 @@ namespace DetailedScan
     {
         private const string modGUID = "fivetoofive.DetailedScan";
         private const string modName = "DetailedScan";
-        private const string modVersion = "1.2.1";
+        private const string modVersion = "1.2.2";
 
         private readonly Harmony harmony = new Harmony(modGUID);
+
+        public bool isSet;
 
         void Awake()
         {
@@ -58,9 +60,12 @@ namespace DetailedScan
 
         private void TerminalIsAwake(object sender, TerminalEventArgs e)
         {
-            AddCommand("detailed", info, "ftf1", true);
-
-            AddCommand("ds", info2, null, true);
+            if (isSet == false)
+            {
+                AddCommand("detailed", info, "ftf1", true);
+                AddCommand("ds", info2, null, true);
+                isSet = true;
+            }
         }
 
         private void OnBeginUsing(object sender, TerminalEventArgs e)
