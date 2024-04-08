@@ -81,7 +81,7 @@ namespace DetailedScan
                     totalValue += unSortedItems[n].scrapValue;
                 }
             }
-
+            sortedItems.Sort((x, y) => x.scrapValue - y.scrapValue);
             string itemStr = string.Join("\n", sortedItems.Select(x => x.itemProperties.itemName + " : " + x.scrapValue.ToString() + " Value"));
             string finStr = "Scrap not in ship: " + sortedItems.Count().ToString() + "\n\n" + itemStr + "\n\nWith a total value of: " + totalValue.ToString()+"\n\n";
 
